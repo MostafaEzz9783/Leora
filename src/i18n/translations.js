@@ -147,8 +147,6 @@ export const translations = {
     widgets: {
       roomPricing: "تسعير الغرف",
       roomPricingSubtitle: "السعر الشهري لكل غرفة حسب السيناريو",
-      compareProjects: "مقارنة المشاريع",
-      compareProjectsSubtitle: "الملقا مقابل القيروان عند نفس الخيار والسيناريو والإشغال",
       revenueDistribution: "توزيع الإيراد",
       revenueDistributionSubtitle: "من الإيراد الإجمالي إلى صافي دخل المالك",
       compPricing: "مقارنة السوق",
@@ -341,8 +339,6 @@ export const translations = {
     widgets: {
       roomPricing: "Room Pricing",
       roomPricingSubtitle: "Monthly price per room by scenario",
-      compareProjects: "Compare Projects",
-      compareProjectsSubtitle: "Malqa vs. Qayrawan at the same option, scenario, and occupancy",
       revenueDistribution: "Revenue Distribution",
       revenueDistributionSubtitle: "From gross revenue to net owner income",
       compPricing: "Market Comparison",

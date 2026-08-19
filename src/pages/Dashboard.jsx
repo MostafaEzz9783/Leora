@@ -10,7 +10,6 @@ import RoomPricingTable from "@/components/RoomPricingTable";
 import OwnerEconomicsCard from "@/components/OwnerEconomicsCard";
 import InvestmentHighlights from "@/components/InvestmentHighlights";
 import ExecutiveClosing from "@/components/ExecutiveClosing";
-import ProjectComparisonCard from "@/components/ProjectComparisonCard";
 import SectionHeader from "@/components/ui/SectionHeader";
 import SkeletonLoader from "@/components/ui/SkeletonLoader";
 import { projects, DEFAULT_PROJECT_ID, DEFAULT_OPTION_ID } from "@/data/projects";
@@ -59,7 +58,6 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
     closestOccupancyOption(projects[DEFAULT_PROJECT_ID].options[DEFAULT_OPTION_ID].occupancyOptions, DEFAULT_OCCUPANCY_TARGET),
   );
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [showCompare, setShowCompare] = useState(false);
   const sectionRef = useRef(null);
   const exportRef = useRef(null);
 
@@ -154,8 +152,6 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
           onToggleFullscreen={toggleFullscreen}
           exportTargetRef={exportRef}
           exportFileName={`${project.name.en}-Financial-Study`}
-          showCompare={showCompare}
-          onToggleCompare={() => setShowCompare((current) => !current)}
         />
 
         <div ref={exportRef}>
@@ -176,10 +172,6 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
             onOccupancyChange={setOccupancy}
             occupancyOptions={snapshot.occupancyOptions}
           />
-
-          {showCompare && (
-            <ProjectComparisonCard t={t} language={language} optionKey={selectedOption} scenario={scenario} occupancy={occupancy} />
-          )}
 
           <KPISection
             t={t}

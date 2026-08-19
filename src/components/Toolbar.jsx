@@ -1,8 +1,8 @@
 import { memo, useState } from "react";
-import { Expand, FileDown, GitCompare, Minimize } from "lucide-react";
+import { Expand, FileDown, Minimize } from "lucide-react";
 import PremiumButton from "@/components/ui/PremiumButton";
 
-function Toolbar({ t, isFullscreen, onToggleFullscreen, exportTargetRef, exportFileName, showCompare, onToggleCompare }) {
+function Toolbar({ t, isFullscreen, onToggleFullscreen, exportTargetRef, exportFileName }) {
   const [isExporting, setIsExporting] = useState(false);
 
   const handleExport = async () => {
@@ -48,14 +48,6 @@ function Toolbar({ t, isFullscreen, onToggleFullscreen, exportTargetRef, exportF
 
   return (
     <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 mb-6">
-      <PremiumButton
-        icon={GitCompare}
-        variant={showCompare ? "solid" : "ghost"}
-        onClick={onToggleCompare}
-        aria-pressed={showCompare}
-      >
-        {t.widgets.compareProjects}
-      </PremiumButton>
       <PremiumButton icon={FileDown} variant="ghost" disabled={isExporting} onClick={handleExport}>
         {isExporting ? t.toolbar.exportingPdf : t.toolbar.exportPdf}
       </PremiumButton>
