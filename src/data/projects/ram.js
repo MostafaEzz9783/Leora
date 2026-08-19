@@ -47,7 +47,7 @@ function buildOption() {
 export const ramProject = {
   id: "ram",
   name: { ar: "RAM", en: "RAM" },
-  location: { ar: "Riyadh", en: "Riyadh" },
+  location: { ar: "جدة", en: "Jeddah" },
   locationSubtext: { ar: "Saudi Arabia", en: "Saudi Arabia" },
   options: {
     option1: buildOption(),
