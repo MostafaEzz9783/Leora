@@ -16,15 +16,15 @@ const occupancyOptions = [60, 70, 80, 90];
 // "LTR Financial Study" sheet, H7:J11 (Best/Base/Worst monthly prices), with
 // unit type and unit number from K:L. Totals reconcile to row 13.
 const roomPricing = [
-  { unit: 1, type: "oneBedroom", worst: 7050, base: 8711, best: 10740 },
-  { unit: 2, type: "oneBedroom", worst: 7050, base: 8711, best: 10740 },
-  { unit: 3, type: "oneBedroom", worst: 7050, base: 8711, best: 10740 },
+  { unit: 1, type: "oneBedroom", worst: 8400, base: 9450, best: 10740 },
+  { unit: 2, type: "oneBedroom", worst: 8400, base: 9450, best: 10740 },
+  { unit: 3, type: "oneBedroom", worst: 8400, base: 9450, best: 10740 },
   { unit: 4, type: "twoBedroom", worst: 9390, base: 11118, best: 13230 },
   { unit: 5, type: "twoBedroom", worst: 9390, base: 11118, best: 13230 },
 ];
 
 // "LTR Study Summary" sheet, F11/L11/P11.
-const revenueAt100ByScenario = { worst: 479160, base: 580419, best: 704160 };
+const revenueAt100ByScenario = { worst: 527760, base: 607037, best: 704160 };
 
 function buildOption() {
   return {
