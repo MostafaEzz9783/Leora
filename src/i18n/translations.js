@@ -32,9 +32,9 @@ export const translations = {
         description: "الإبقاء عليها كما هي (3 غرف)",
       },
       ramStudy: {
-        label: "RAM",
-        sublabel: "Financial Study",
-        description: "RAM financial study",
+        label: "الإيجار اليومي",
+        sublabel: "STR",
+        description: "نموذج الإيجار اليومي",
       },
     },
     roomTypes: {
@@ -224,9 +224,9 @@ export const translations = {
         description: "Keep it the same as a 3-bedroom unit",
       },
       ramStudy: {
-        label: "RAM",
-        sublabel: "Financial Study",
-        description: "RAM financial study",
+        label: "STR",
+        sublabel: "Daily Rental",
+        description: "Short-term daily rental model",
       },
     },
     roomTypes: {

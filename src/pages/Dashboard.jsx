@@ -131,7 +131,7 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
 
   const snapshot = useMemo(() => getOptionSnapshot(option, scenario, occupancy), [option, scenario, occupancy]);
 
-  const heroSubtitle = `${option.roomCount} ${t.units.rooms} · ${project.location[language]}`;
+  const heroSubtitle = `${option.roomCount} ${t.units.units} · ${project.location[language]}`;
 
   return (
     <div className="min-h-screen relative" style={{ backgroundColor: "#151522" }}>
@@ -180,7 +180,7 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
             occupancy={occupancy}
             revenueAt100={snapshot.revenueAt100}
             unitCount={option.roomCount}
-            operatingModel="ltr"
+            operatingModel="str"
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">

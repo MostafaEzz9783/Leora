@@ -55,7 +55,7 @@ function PortfolioSnapshot({ t, project, scenario, occupancy }) {
                   ? t.options[project.options[key].labelKey].label
                   : t.options[key].label
               }
-              value={`${project.options[key].roomCount} ${t.units.rooms}`}
+              value={`${project.options[key].roomCount} ${t.units.units}`}
             />
           ))}
         </div>
