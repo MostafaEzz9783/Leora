@@ -7,7 +7,9 @@ import { chartTheme, colors } from "@/lib/theme";
 
 const FEE_COLORS = {
   mathwaaShare: colors.bronze,
+  vat: "#9C99AE",
   otaFee: colors.purple,
+  madinumShare: colors.bronze,
 };
 
 function RevenueDistributionDonut({ t, row }) {
@@ -20,6 +22,7 @@ function RevenueDistributionDonut({ t, row }) {
         name: t.fees[deduction.labelKey],
         value: deduction.amount,
         color: FEE_COLORS[deduction.key] ?? "#8b889c",
+        displayPercent: deduction.rate * 100,
         index,
       })),
       {
@@ -27,6 +30,7 @@ function RevenueDistributionDonut({ t, row }) {
         name: t.kpi.netToOwner,
         value: row.netRevenue,
         color: colors.best,
+        displayPercent: null,
         index: row.deductions.length,
       },
     ],
@@ -87,7 +91,7 @@ function RevenueDistributionDonut({ t, row }) {
                   </span>
                 </span>
                 <span className="font-bold flex-shrink-0" style={{ color: slice.color, direction: "ltr" }}>
-                  {((slice.value / total) * 100).toFixed(0)}%
+                  {(slice.displayPercent ?? (slice.value / total) * 100).toFixed(0)}%
                 </span>
               </div>
             ))}

@@ -52,8 +52,8 @@ export const translations = {
     fees: {
       mathwaaShare: "حصة مدينيوم",
       otaFee: "عمولة منصات الحجز",
-      vat: "VAT",
-      madinumShare: "Madinum Share",
+      vat: "ضريبة القيمة المضافة",
+      madinumShare: "حصة مدينيوم",
     },
     selectors: {
       project: "المشروع",
