@@ -150,6 +150,7 @@ export const translations = {
     widgets: {
       roomPricing: "تسعير الغرف",
       roomPricingSubtitle: "السعر الشهري لكل غرفة حسب السيناريو",
+      roomPricingUnavailable: "لا يوجد تسعير وحدات مفصل في المصادر المرئية لهذا النموذج.",
       revenueDistribution: "توزيع الإيراد",
       revenueDistributionSubtitle: "من الإيراد الإجمالي إلى صافي دخل المالك",
       compPricing: "مقارنة السوق",
@@ -345,6 +346,7 @@ export const translations = {
     widgets: {
       roomPricing: "Room Pricing",
       roomPricingSubtitle: "Monthly price per room by scenario",
+      roomPricingUnavailable: "No detailed unit pricing is available in the visible sources for this model.",
       revenueDistribution: "Revenue Distribution",
       revenueDistributionSubtitle: "From gross revenue to net owner income",
       compPricing: "Market Comparison",

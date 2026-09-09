@@ -15,7 +15,9 @@ function RoomPricingTable({ t, roomPricing, scenario }) {
       </p>
 
       <div className="overflow-x-auto">
-        <table className="w-full text-xs" style={{ borderCollapse: "separate", borderSpacing: "0 6px" }}>
+        {roomPricing.length === 0 ? (
+          <p className="py-8 text-center text-xs" style={{ color: "#9C99AE" }}>{t.widgets.roomPricingUnavailable}</p>
+        ) : <table className="w-full text-xs" style={{ borderCollapse: "separate", borderSpacing: "0 6px" }}>
           <thead>
             <tr style={{ color: "#8b889c" }}>
               <th className="text-start font-semibold pb-1 px-2">{t.units.unit}</th>
@@ -48,7 +50,7 @@ function RoomPricingTable({ t, roomPricing, scenario }) {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table>}
       </div>
     </GlassCard>
   );
