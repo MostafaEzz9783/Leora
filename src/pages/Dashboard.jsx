@@ -180,7 +180,7 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
             occupancy={occupancy}
             revenueAt100={snapshot.revenueAt100}
             unitCount={option.roomCount}
-            operatingModel="str"
+            operatingModel={selectedOption}
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">

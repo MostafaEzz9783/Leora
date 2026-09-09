@@ -1,11 +1,11 @@
-import { ramProject } from "@/data/projects/ram";
+import { leoraProject } from "@/data/projects/leora";
 
 export const projects = {
-  ram: ramProject,
+  leora: leoraProject,
 };
 
-export const projectOrder = ["ram"];
-export const DEFAULT_PROJECT_ID = "ram";
-export const DEFAULT_OPTION_ID = "option1";
+export const projectOrder = ["leora"];
+export const DEFAULT_PROJECT_ID = "leora";
+export const DEFAULT_OPTION_ID = "str";
 
 export default projects;

@@ -42,6 +42,7 @@ export const translations = {
       externalMaster: "ماستر خارجي",
       oneBedroom: "1Bd",
       twoBedroom: "2Bd",
+      threeBedroom: "3Bd",
     },
     scenarios: {
       worst: "الأسوأ",
@@ -233,6 +234,7 @@ export const translations = {
       externalMaster: "External Master Room",
       oneBedroom: "1Bd Unit",
       twoBedroom: "2Bd Unit",
+      threeBedroom: "3Bd Unit",
     },
     scenarios: {
       worst: "Worst",
