@@ -22,7 +22,6 @@ const RevenueWaterfall = lazy(() => import("@/components/RevenueWaterfall"));
 const PortfolioSnapshot = lazy(() => import("@/components/PortfolioSnapshot"));
 const OccupancySensitivity = lazy(() => import("@/components/OccupancySensitivity"));
 const SensitivityHeatmap = lazy(() => import("@/components/SensitivityHeatmap"));
-const CashFlowTimeline = lazy(() => import("@/components/CashFlowTimeline"));
 
 const MONTH_KEYS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
 const DEFAULT_OCCUPANCY_TARGET = 70;
@@ -233,12 +232,6 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
           <div className="mb-6">
             <Suspense fallback={<SkeletonLoader height={280} />}>
               <SensitivityHeatmap t={t} model={option} activeScenario={scenario} activeOccupancy={occupancy} />
-            </Suspense>
-          </div>
-
-          <div className="mb-6">
-            <Suspense fallback={<SkeletonLoader height={260} />}>
-              <CashFlowTimeline t={t} monthlySeries={snapshot.monthlySeries} isHybrid={false} />
             </Suspense>
           </div>
 
