@@ -20,6 +20,9 @@ export const translations = {
       hybrid: { label: "نموذج مختلط", sublabel: "Hybrid" },
     },
     options: {
+      str: { label: "إيجار قصير المدى", sublabel: "STR", description: "نموذج الإيجار قصير المدى" },
+      ltr: { label: "إيجار طويل المدى", sublabel: "LTR", description: "نموذج الإيجار طويل المدى" },
+      hybrid: { label: "نموذج هجين", sublabel: "Hybrid", description: "مزيج من الإيجار القصير والطويل" },
       option1: {
         label: "الخيار الأول",
         sublabel: "Option 1",
@@ -212,6 +215,9 @@ export const translations = {
       hybrid: { label: "Hybrid Model", sublabel: "Hybrid" },
     },
     options: {
+      str: { label: "Short-Term Rental", sublabel: "STR", description: "Short-term rental model" },
+      ltr: { label: "Long-Term Rental", sublabel: "LTR", description: "Long-term rental model" },
+      hybrid: { label: "Hybrid Model", sublabel: "Hybrid", description: "Combined short- and long-term model" },
       option1: {
         label: "Option 1",
         sublabel: "Add extra room",
