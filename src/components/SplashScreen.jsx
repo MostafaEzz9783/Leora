@@ -17,7 +17,11 @@ export default function SplashScreen({ text, brandAlt, onDone }) {
   return (
     <motion.div
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center px-6"
-      style={{ backgroundColor: "#151522" }}
+      style={{
+        backgroundColor: "#F1ECD9",
+        backgroundImage: "radial-gradient(circle at 50% 44%, rgba(120, 152, 121, 0.20), transparent 32%), linear-gradient(rgba(35, 61, 41, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 61, 41, 0.035) 1px, transparent 1px)",
+        backgroundSize: "auto, 28px 28px, 28px 28px",
+      }}
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: prefersReducedMotion ? 0.15 : 0.5, ease: "easeInOut" }}
@@ -33,7 +37,7 @@ export default function SplashScreen({ text, brandAlt, onDone }) {
           <motion.div
             aria-hidden="true"
             className="absolute rounded-full blur-3xl pointer-events-none"
-            style={{ width: 260, height: 260, backgroundColor: "rgba(191, 124, 74, 0.35)" }}
+            style={{ width: 280, height: 280, backgroundColor: "rgba(120, 152, 121, 0.30)" }}
             animate={{ opacity: [0.5, 0.9, 0.5], scale: [0.9, 1.08, 0.9] }}
             transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -45,8 +49,8 @@ export default function SplashScreen({ text, brandAlt, onDone }) {
           style={{
             width: 196,
             height: 196,
-            backgroundColor: "#FBF9F5",
-            boxShadow: "0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255,255,255,0.06)",
+            backgroundColor: "#FFFDF6",
+            boxShadow: "0 20px 50px rgba(35, 61, 41, 0.16), 0 0 0 1px rgba(35, 61, 41, 0.12)",
           }}
         />
         <img
@@ -58,7 +62,7 @@ export default function SplashScreen({ text, brandAlt, onDone }) {
 
       <motion.p
         className="mt-10 text-sm font-medium tracking-wide text-center"
-        style={{ color: "#9C99AE" }}
+        style={{ color: "#426449" }}
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0 }}
@@ -69,11 +73,11 @@ export default function SplashScreen({ text, brandAlt, onDone }) {
 
       <div
         className="mt-7 w-40 max-w-[50vw] h-[3px] rounded-full overflow-hidden"
-        style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
+        style={{ backgroundColor: "rgba(35, 61, 41, 0.13)" }}
       >
         <motion.div
           className="h-full rounded-full"
-          style={{ background: "linear-gradient(90deg, #BF7C4A, #E0A876)" }}
+          style={{ background: "linear-gradient(90deg, #233D29, #789879)" }}
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
           transition={{ duration: displayDuration / 1000, ease: "easeInOut" }}

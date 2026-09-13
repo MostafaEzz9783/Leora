@@ -4,27 +4,57 @@
 
 :root {
   color-scheme: light;
+  --brand-forest: #233d29;
+  --brand-green: #426449;
+  --brand-sage: #789879;
+  --brand-ivory: #f1ecd9;
+  --brand-ink-muted: #647064;
 }
 
 html,
 body {
-  background-color: #f7f6f3;
+  background-color: #f1ecd9;
 }
 
 body {
-  font-family: "Inter", "Cairo", sans-serif;
+  font-family: "Noor", "Arial", sans-serif;
+  color: #233d29;
+  background-image: linear-gradient(90deg, rgba(77, 104, 78, 0.045) 1px, transparent 1px), linear-gradient(rgba(77, 104, 78, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 [dir="rtl"] body {
-  font-family: "Cairo", "Inter", sans-serif;
+  font-family: "Noor", "Cairo", sans-serif;
 }
+
+[dir="ltr"] body {
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, .font-black, .font-bold {
+  font-family: "DIN Next LT Arabic", "DIN Next LT W23", "Cairo", Arial, sans-serif;
+}
+
+[dir="ltr"] h1, [dir="ltr"] h2, [dir="ltr"] h3, [dir="ltr"] .font-black, [dir="ltr"] .font-bold {
+  font-family: "DIN Next LT Arabic", Arial, sans-serif;
+}
+
+/* Legacy dark-theme text tokens are remapped for the ivory draft surface. */
+/* React serializes inline colours as rgb values, so map both source forms. */
+[style*="#F5F3EF"], [style*="rgb(245, 243, 239)"] { color: var(--brand-forest) !important; }
+[style*="#9C99AE"], [style*="#8b889c"], [style*="#B4B1C4"], [style*="rgb(156, 153, 174)"], [style*="rgb(139, 136, 156)"], [style*="rgb(180, 177, 196)"] { color: var(--brand-ink-muted) !important; }
+[style*="#BF7C4A"], [style*="rgb(191, 124, 74)"] { color: var(--brand-green) !important; }
+[style*="#E0A876"], [style*="rgb(224, 168, 118)"] { color: var(--brand-sage) !important; }
+
+.brand-hero [style*="#FBF8EB"] { color: #fbf8eb !important; }
+.brand-hero [style*="#DCD4BA"] { color: #dcd4ba !important; }
 
 * {
   -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
-  background-color: rgba(191, 124, 74, 0.25);
+  background-color: rgba(95, 133, 99, 0.28);
 }
 
 .arqa-slider::-webkit-slider-thumb {
@@ -33,9 +63,9 @@ body {
   width: 18px;
   height: 18px;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #e0a876, #bf7c4a);
-  border: 2px solid #151522;
-  box-shadow: 0 2px 8px rgba(191, 124, 74, 0.5);
+  background: #426449;
+  border: 2px solid #f1ecd9;
+  box-shadow: 0 2px 8px rgba(35, 61, 41, 0.22);
   cursor: pointer;
 }
 
@@ -43,9 +73,9 @@ body {
   width: 18px;
   height: 18px;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #e0a876, #bf7c4a);
-  border: 2px solid #151522;
-  box-shadow: 0 2px 8px rgba(191, 124, 74, 0.5);
+  background: #426449;
+  border: 2px solid #f1ecd9;
+  box-shadow: 0 2px 8px rgba(35, 61, 41, 0.22);
   cursor: pointer;
 }
 

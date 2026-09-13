@@ -11,8 +11,8 @@ export default function Navbar({ t, language, selectedProject, onProjectChange, 
           <button
             type="button"
             onClick={onToggleLanguage}
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-xl transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#BF7C4A]"
-            style={{ color: "#F5F3EF", backgroundColor: "rgba(255,255,255,0.06)" }}
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DCD4BA]"
+            style={{ color: "#FBF8EB", backgroundColor: "rgba(241,236,217,0.12)" }}
           >
             <Globe size={13} />
             {t.nav.languageToggle}

@@ -112,7 +112,7 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
 
   useEffect(() => {
     document.title =
-      language === "ar" ? `مدينيوم - الدراسة المالية - ${project.name.ar}` : `Madinum - ${project.name.en} Financial Study`;
+      language === "ar" ? `مادينيوم - الدراسة المالية - ${project.name.ar}` : `Madinum - ${project.name.en} Financial Study`;
   }, [language, project]);
 
   const toggleFullscreen = useCallback(async () => {
@@ -134,7 +134,7 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
   const heroSubtitle = `${option.roomCount} ${unitLabel} · ${project.location[language]}`;
 
   return (
-    <div className="min-h-screen relative" style={{ backgroundColor: "#151522" }}>
+    <div className="min-h-screen relative" style={{ backgroundColor: "#F1ECD9" }}>
       <FloatingBackground />
       <Navbar
         t={t}
@@ -145,7 +145,7 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
       />
       <Hero t={t} title={project.name[language]} subtitle={heroSubtitle} />
 
-      <main ref={sectionRef} className="max-w-7xl mx-auto px-6 pb-16" style={{ backgroundColor: isFullscreen ? "#151522" : "transparent" }}>
+      <main ref={sectionRef} className="max-w-7xl mx-auto px-6 pb-16" style={{ backgroundColor: isFullscreen ? "#F1ECD9" : "transparent" }}>
         <Toolbar
           t={t}
           isFullscreen={isFullscreen}

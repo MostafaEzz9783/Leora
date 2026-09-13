@@ -42,13 +42,13 @@ export default function GlassCard({
   return (
     <Component
       ref={ref}
-      className={`relative rounded-3xl border overflow-hidden ${className}`}
+      className={`relative rounded-2xl border overflow-hidden ${className}`}
       style={{
-        backgroundColor: dark ? "#1D1D2D" : "rgba(255,255,255,0.7)",
-        borderColor: dark ? "rgba(255,255,255,0.08)" : "rgba(15,15,26,0.08)",
+        backgroundColor: dark ? "#FBF8EB" : "rgba(251,248,235,0.72)",
+        borderColor: "rgba(35,61,41,0.16)",
         boxShadow: glow
-          ? "0 30px 80px -20px rgba(191, 124, 74, 0.25), 0 10px 30px -10px rgba(0,0,0,0.35)"
-          : "0 20px 50px -20px rgba(0,0,0,0.35)",
+          ? "0 22px 48px -26px rgba(35,61,41,0.28)"
+          : "0 12px 28px -24px rgba(35,61,41,0.22)",
         transformStyle: "preserve-3d",
         perspective: 1000,
         rotateX: enableTilt ? rotateX : 0,
@@ -65,7 +65,7 @@ export default function GlassCard({
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-60"
-          style={{ background: "radial-gradient(circle at 30% 0%, rgba(191,124,74,0.18), transparent 60%)" }}
+          style={{ background: "radial-gradient(circle at 30% 0%, rgba(120,152,121,0.22), transparent 60%)" }}
         />
       )}
       <div className="relative" style={{ transform: "translateZ(24px)" }}>
