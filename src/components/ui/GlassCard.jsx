@@ -6,7 +6,7 @@ export default function GlassCard({
   children,
   className = "",
   glow = false,
-  tilt = true,
+  tilt = false,
   dark = true,
   as: Component = motion.div,
   style,

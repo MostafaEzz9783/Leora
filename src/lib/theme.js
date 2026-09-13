@@ -37,9 +37,9 @@ export const motion = {
     stiffness: 180,
     damping: 22,
   },
-  hoverLift: -6,
-  hoverScale: 1.02,
-  tiltMaxDeg: 6,
+  hoverLift: -3,
+  hoverScale: 1.005,
+  tiltMaxDeg: 2,
   floatLoopSeconds: 26,
   counterEase: [0.16, 1, 0.3, 1],
 };

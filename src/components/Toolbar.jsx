@@ -47,7 +47,7 @@ function Toolbar({ t, isFullscreen, onToggleFullscreen, exportTargetRef, exportF
   };
 
   return (
-    <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 mb-6">
+    <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 mt-3 mb-5">
       <PremiumButton icon={FileDown} variant="ghost" disabled={isExporting} onClick={handleExport}>
         {isExporting ? t.toolbar.exportingPdf : t.toolbar.exportPdf}
       </PremiumButton>

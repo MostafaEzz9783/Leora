@@ -44,7 +44,7 @@ function RangeBar({ label, unit, comp, selectedValue, color }) {
 
 function CompPricingCard({ t, scenario }) {
   const ltrPrice = ltrModel.scenarios[scenario].revenueAt100 / (ltrModel.unitCount * 12);
-  const strPrice = strModel.scenarios[scenario].revenueAt100 / (strModel.unitCount * 360);
+  const strPrice = strModel.scenarios[scenario].revenueAt100 / (strModel.unitCount * 365);
 
   return (
     <GlassCard id="market-comp" tilt={false} className="p-5 sm:p-6">

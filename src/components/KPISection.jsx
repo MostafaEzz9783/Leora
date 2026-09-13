@@ -3,7 +3,7 @@ import MetricCard from "@/components/ui/MetricCard";
 import Sparkline from "@/components/ui/Sparkline";
 import { formatSAR, formatPercent } from "@/lib/format";
 
-// STR/Hybrid are priced per night (360 nights/year in this study); LTR is
+// STR/Hybrid are priced per night (365 nights/year in this study); LTR is
 // priced per month (12 months/year) - ADR/RevPAR use whichever period the
 // operating model actually prices in, so they're real derived market
 // metrics, not invented ones.
@@ -13,7 +13,7 @@ function KPISection({ t, row, sparklineSeries, occupancy, revenueAt100, unitCoun
   const revenueSpark = useMemo(() => sparklineSeries.map((point) => ({ value: point.revenue })), [sparklineSeries]);
 
   const isNightly = NIGHTLY_MODELS.has(operatingModel);
-  const period = isNightly ? 360 : 12;
+  const period = isNightly ? 365 : 12;
   const adr = revenueAt100 / (unitCount * period);
   const revpar = row.revenue / (unitCount * period);
   const rateUnit = isNightly ? t.kpi.perNight : t.kpi.perMonth;

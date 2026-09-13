@@ -1,4 +1,5 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import FloatingBackground from "@/components/FloatingBackground";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -50,6 +51,7 @@ function getOptionSnapshot(option, scenario, occupancy) {
 }
 
 export default function Dashboard({ t, language, onToggleLanguage }) {
+  const prefersReducedMotion = useReducedMotion();
   const [selectedProject, setSelectedProject] = useState(DEFAULT_PROJECT_ID);
   const [selectedOption, setSelectedOption] = useState(DEFAULT_OPTION_ID);
   const [scenario, setScenario] = useState("base");
@@ -132,6 +134,14 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
 
   const unitLabel = language === "ar" ? t.units.unit : t.units.units;
   const heroSubtitle = `${option.roomCount} ${unitLabel} · ${project.location[language]}`;
+  const reveal = prefersReducedMotion
+    ? {}
+    : {
+        initial: { opacity: 0, y: 22 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, amount: 0.18 },
+        transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+      };
 
   return (
     <div className="min-h-screen relative" style={{ backgroundColor: "#F1ECD9" }}>
@@ -173,22 +183,24 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
             occupancyOptions={snapshot.occupancyOptions}
           />
 
-          <KPISection
-            t={t}
-            row={snapshot.row}
-            sparklineSeries={snapshot.sparklineSeries}
-            occupancy={occupancy}
-            revenueAt100={snapshot.revenueAt100}
-            unitCount={option.roomCount}
-            operatingModel={selectedOption}
-          />
+          <motion.div {...reveal}>
+            <KPISection
+              t={t}
+              row={snapshot.row}
+              sparklineSeries={snapshot.sparklineSeries}
+              occupancy={occupancy}
+              revenueAt100={snapshot.revenueAt100}
+              unitCount={option.roomCount}
+              operatingModel={selectedOption}
+            />
+          </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+          <motion.div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6" {...reveal} transition={{ duration: 0.5, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}>
             <OccupancyRing t={t} occupancy={occupancy} />
             <div className="lg:col-span-2">
               <RoomPricingTable t={t} roomPricing={option.roomPricing} scenario={scenario} />
             </div>
-          </div>
+          </motion.div>
 
           {/* ---------------------------------------------------------------
               Madinum Performance: internal, fee-adjusted figures - kept
@@ -199,20 +211,20 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
             {t.sections.mathwaPerformanceSubtitle}
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+          <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6" {...reveal}>
             <Suspense fallback={<SkeletonLoader height={240} />}>
               <RevenueDistributionDonut t={t} row={snapshot.row} />
             </Suspense>
             <OwnerEconomicsCard t={t} row={snapshot.row} />
-          </div>
+          </motion.div>
 
-          <div className="mb-6">
+          <motion.div className="mb-6" {...reveal}>
             <Suspense fallback={<SkeletonLoader height={280} />}>
               <RevenueWaterfall t={t} row={snapshot.row} revenueAt100={snapshot.revenueAt100} />
             </Suspense>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+          <motion.div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6" {...reveal}>
             <div className="lg:col-span-2">
               <Suspense fallback={<SkeletonLoader height={220} />}>
                 <PortfolioSnapshot t={t} project={project} scenario={scenario} occupancy={occupancy} />
@@ -228,13 +240,13 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
                 />
               </Suspense>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="mb-6">
+          <motion.div className="mb-6" {...reveal}>
             <Suspense fallback={<SkeletonLoader height={280} />}>
               <SensitivityHeatmap t={t} model={option} activeScenario={scenario} activeOccupancy={occupancy} />
             </Suspense>
-          </div>
+          </motion.div>
 
           {/* ---------------------------------------------------------------
               Investment Highlights: a closing executive summary for the
