@@ -27,6 +27,7 @@ function getRowForOption(option, scenario, occupancy) {
 
 function PortfolioSnapshot({ t, project, scenario, occupancy }) {
   const optionKeys = useMemo(() => Object.keys(project.options), [project.options]);
+  const unitLabel = t.meta.language === "ar" ? t.units.unit : t.units.units;
   const data = useMemo(
     () =>
       optionKeys.map((key) => {
@@ -55,7 +56,7 @@ function PortfolioSnapshot({ t, project, scenario, occupancy }) {
                   ? t.options[project.options[key].labelKey].label
                   : t.options[key].label
               }
-              value={`${project.options[key].roomCount} ${t.units.units}`}
+              value={`${project.options[key].roomCount} ${unitLabel}`}
             />
           ))}
         </div>
