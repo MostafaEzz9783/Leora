@@ -130,7 +130,8 @@ export default function Dashboard({ t, language, onToggleLanguage }) {
 
   const snapshot = useMemo(() => getOptionSnapshot(option, scenario, occupancy), [option, scenario, occupancy]);
 
-  const heroSubtitle = `${option.roomCount} ${t.units.units} · ${project.location[language]}`;
+  const unitLabel = language === "ar" ? t.units.unit : t.units.units;
+  const heroSubtitle = `${option.roomCount} ${unitLabel} · ${project.location[language]}`;
 
   return (
     <div className="min-h-screen relative" style={{ backgroundColor: "#151522" }}>
