@@ -139,6 +139,7 @@ export const translations = {
       closingStatement:
         "تلتزم مادينيوم بتحقيق أداء مالي ملموس من خلال إدارة إيرادات منضبطة، وتميز تشغيلي، وشفافية كاملة.",
       attribution: "أُعِد هذا التقرير حصريًا لمالك العقار من قبل فريق إدارة الإيرادات في مادينيوم.",
+      contactTitle: "للتواصل مع مادينيوم",
     },
     units: {
       unit: "وحدة",
@@ -335,6 +336,7 @@ export const translations = {
       closingStatement:
         "Madinum is committed to delivering measurable financial performance through disciplined revenue management, operational excellence, and complete transparency.",
       attribution: "Prepared exclusively for the property owner by the Madinum Revenue Management Team.",
+      contactTitle: "Contact Madinum",
     },
     units: {
       unit: "unit",

@@ -18,26 +18,48 @@ function Toolbar({ t, isFullscreen, onToggleFullscreen, exportTargetRef, exportF
       const canvas = await html2canvas(exportTargetRef.current, {
         scale: 2,
         useCORS: true,
-        backgroundColor: "#151522",
+        backgroundColor: "#F1ECD9",
+        windowWidth: exportTargetRef.current.scrollWidth,
+        onclone: (documentClone) => {
+          const exportStyles = documentClone.createElement("style");
+          exportStyles.textContent = `
+            *, *::before, *::after {
+              animation: none !important;
+              transition: none !important;
+              caret-color: transparent !important;
+            }
+            html, body { background: #F1ECD9 !important; }
+          `;
+          documentClone.head.appendChild(exportStyles);
+        },
       });
 
-      const imageData = canvas.toDataURL("image/jpeg", 0.95);
       const pdf = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
-      const imageWidth = pageWidth;
-      const imageHeight = (canvas.height * imageWidth) / canvas.width;
-      const fittedHeight = Math.min(imageHeight, pageHeight);
-      const fittedWidth = imageHeight > pageHeight ? (canvas.width * pageHeight) / canvas.height : imageWidth;
+      const margin = 8;
+      const imageWidth = pageWidth - margin * 2;
+      const imageHeight = pageHeight - margin * 2;
+      const sourceSliceHeight = Math.floor((imageHeight / imageWidth) * canvas.width);
+      let sourceY = 0;
+      let pageIndex = 0;
 
-      pdf.addImage(
-        imageData,
-        "JPEG",
-        (pageWidth - fittedWidth) / 2,
-        (pageHeight - fittedHeight) / 2,
-        fittedWidth,
-        fittedHeight,
-      );
+      // Render a full-width slice per page rather than shrinking the whole
+      // dashboard into one A4 sheet. This preserves Arabic glyph sharpness,
+      // chart labels, and the intended colour contrast.
+      while (sourceY < canvas.height) {
+        const sliceHeight = Math.min(sourceSliceHeight, canvas.height - sourceY);
+        const slice = document.createElement("canvas");
+        slice.width = canvas.width;
+        slice.height = sliceHeight;
+        slice.getContext("2d").drawImage(canvas, 0, sourceY, canvas.width, sliceHeight, 0, 0, canvas.width, sliceHeight);
+
+        if (pageIndex > 0) pdf.addPage();
+        const renderedHeight = (sliceHeight / canvas.width) * imageWidth;
+        pdf.addImage(slice.toDataURL("image/png"), "PNG", margin, margin, imageWidth, renderedHeight, undefined, "FAST");
+        sourceY += sliceHeight;
+        pageIndex += 1;
+      }
       pdf.save(`${exportFileName ?? "Financial-Study"}.pdf`);
     } catch (error) {
       console.error("Failed to export PDF", error);

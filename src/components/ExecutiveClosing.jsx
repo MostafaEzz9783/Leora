@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
-import { Handshake, LineChart, ShieldCheck, Wrench } from "lucide-react";
+import { Handshake, LineChart, Mail, Phone, ShieldCheck, Wrench } from "lucide-react";
 import GlassCard from "@/components/ui/GlassCard";
 
 const CARD_ICONS = [LineChart, Wrench, ShieldCheck, Handshake];
@@ -72,6 +72,38 @@ function ExecutiveClosing({ t }) {
           <p className="text-xs" style={{ color: "#6f6c82" }}>
             {t.closing.attribution}
           </p>
+        </div>
+
+        <div className="mt-8 pt-6 flex flex-col items-center" style={{ borderTop: "1px solid rgba(35,61,41,0.12)" }}>
+          <p className="text-xs font-bold mb-3" style={{ color: "#426449" }}>
+            {t.closing.contactTitle}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" dir="ltr">
+            <a
+              href="mailto:info@madinum.sa"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold transition-transform hover:-translate-y-0.5"
+              style={{ color: "#233D29", backgroundColor: "rgba(120,152,121,0.13)", border: "1px solid rgba(35,61,41,0.13)" }}
+            >
+              <Mail size={14} />
+              info@madinum.sa
+            </a>
+            <a
+              href="tel:+966540060229"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold transition-transform hover:-translate-y-0.5"
+              style={{ color: "#233D29", backgroundColor: "rgba(120,152,121,0.13)", border: "1px solid rgba(35,61,41,0.13)" }}
+            >
+              <Phone size={14} />
+              +966 54 006 0229
+            </a>
+            <a
+              href="tel:+966504338111"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold transition-transform hover:-translate-y-0.5"
+              style={{ color: "#233D29", backgroundColor: "rgba(120,152,121,0.13)", border: "1px solid rgba(35,61,41,0.13)" }}
+            >
+              <Phone size={14} />
+              +966 50 433 8111
+            </a>
+          </div>
         </div>
       </GlassCard>
     </motion.div>
