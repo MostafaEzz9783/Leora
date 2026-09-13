@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
-import { Handshake, LineChart, Mail, Phone, ShieldCheck, Wrench } from "lucide-react";
+import { ExternalLink, Handshake, LineChart, Mail, Phone, ShieldCheck, Wrench } from "lucide-react";
 import GlassCard from "@/components/ui/GlassCard";
 
 const CARD_ICONS = [LineChart, Wrench, ShieldCheck, Handshake];
@@ -104,6 +104,16 @@ function ExecutiveClosing({ t }) {
               +966 50 433 8111
             </a>
           </div>
+          <a
+            href="https://drive.google.com/file/d/1PIgnZ7mCYGcyx5sOc4EmI7pTPYb-dLNu/view?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-bold transition-transform hover:-translate-y-0.5"
+            style={{ color: "#FBF8EB", backgroundColor: "#426449", boxShadow: "0 8px 18px -12px rgba(35,61,41,0.65)" }}
+          >
+            {t.closing.aboutUs}
+            <ExternalLink size={15} />
+          </a>
         </div>
       </GlassCard>
     </motion.div>
