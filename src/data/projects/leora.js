@@ -4,7 +4,7 @@ import { buildModelScenarios } from "@/data/arqaModelCalculations";
 // sheets may feed this module. See scripts/validateLeoraSources.mjs.
 const feePipeline = [
   { key: "otaFee", labelKey: "otaFee", rate: 0.15 },
-  { key: "madinumShare", labelKey: "madinumShare", rate: 0.17 },
+  { key: "madinumShare", labelKey: "madinumShare", rate: 0.18 },
 ];
 
 const occupancyOptions = [50, 60, 70, 80, 90];
